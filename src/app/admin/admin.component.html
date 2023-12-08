@@ -1,0 +1,68 @@
+<mat-toolbar color="warn">
+    <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Water Refilling Station</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+<!--
+<mat-sidenav-container>
+    <mat-sidenav opened="true" mode="side">
+        <mat-nav-list>
+            <mat-list-item>
+                <button routerLinkActive="active-link" routerLink = "dashboard" mat-button><mat-icon>dashboard</mat-icon>Dashboard</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button  routerLinkActive="active-link" routerLink = "user-management" mat-button><mat-icon>face</mat-icon>User Management</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button  routerLinkActive="active-link" routerLink = "order-form" mat-button><mat-icon>description</mat-icon>Order Form</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button  routerLinkActive="active-link" routerLink = "sales-view" mat-button><mat-icon>timeline</mat-icon>Sales View</button>
+            </mat-list-item>
+    
+            <mat-list-item>
+                <button  mat-button routerLink="/login"><mat-icon>logout</mat-icon>Logout</button>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="margin: 30px">
+        <router-outlet></router-outlet>
+    </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+-->
+
+<mat-drawer-container>
+    <mat-drawer #drawer opened="true" mode="side">
+        <mat-nav-list>
+            <mat-list-item>
+                <button mat-button routerLinkActive="active-link" routerLink="/admin/dashboard"><mat-icon>dashboard</mat-icon>Dashboard</button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button mat-button routerLinkActive="active-link" routerLink="user-management"><mat-icon>face</mat-icon>User Management</button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button mat-button routerLinkActive="active-link" routerLink="order-form"><mat-icon>description</mat-icon>Order Form</button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button mat-button routerLinkActive="active-link" routerLink="sales-view"><mat-icon>timeline</mat-icon>Sales View</button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button mat-button routerLink="/login"><mat-icon>logout</mat-icon>Logout</button>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+<div style="text-align: center; min-height: 600px;">
+<router-outlet></router-outlet>
+</div>
+    </mat-drawer-content>
+</mat-drawer-container>

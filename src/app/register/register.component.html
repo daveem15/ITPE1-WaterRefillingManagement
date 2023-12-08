@@ -1,0 +1,58 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<body>
+
+<div class="loginform">
+  <h1 class="text-center text-primary mt-2 mb-4">Register</h1>
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="password"> Full Name</label>
+        <input type="name" class="form-control" id="name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+
+      </div>
+
+      <div class="form-group">
+        <label for="email">Full Address</label>
+        <input type="address" class="form-control" id="address" >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Enter Password</label>
+        <input type="password" class="form-control" id="password" >
+      </div>
+      <div class="form-group">
+        <label for="password">Confirm Password</label>
+        <input type="password" class="form-control" id="cpassword" >
+      </div>
+
+      <div class="form-group">
+        <label for="number">Mobile Number</label>
+        <input type="text" class="form-control" id="number" placeholder="09XX XXX XXXX" >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Gender</label>
+        <select class="form-control">
+          <option>....</option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="age" class="form-control" id="age">
+      </div>
+      <br>
+      <button type="button" class="btn btn-primary" routerLink="/login">Register</button>
+      <button type="button" class="btn btn-danger" routerLink="/login">Back</button>
+    </form>
+  </div>
+  
+</div>

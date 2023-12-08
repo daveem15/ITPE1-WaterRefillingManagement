@@ -1,0 +1,31 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url('https://media.istockphoto.com/id/1371714013/vector/seamless-flawing-background.jpg?s=612x612&w=0&k=20&c=mDJvhytor_nKIiKrk7kZKVUuJYsV8ASbEx82fzzHa28=');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
+.loginform{
+    background-color: #fff;
+    width: 30%;
+    height: auto;
+    margin: 7% auto;
+    padding: 25px 10px;
+}
+
+.btn-light {
+    margin-left: 50px;
+}
+
+@media screen and (max-width: 600px)
+{
+    .loginform
+    {
+       margin: 35% auto;
+        width: 90%;
+    }
+}

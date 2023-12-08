@@ -1,0 +1,12 @@
+<div mat-dialog-title>
+    <h1>Delette Data</h1>
+</div>
+<form [formGroup] = "UserForm">
+<div mat-dialog-content>
+    <h1>Do you really want to delete {{data.name}}?</h1>
+   </div>
+<div mat-dialog-actions>
+    <button mat-raised-button>Cancel</button>
+    <button mat-raised-button color="primary" type="submit">Delete</button>
+</div>
+</form>
