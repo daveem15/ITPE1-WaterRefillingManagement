@@ -1,58 +1,178 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+  crossorigin="anonymous"
+/>
 
 <body>
+  <div class="loginform">
+    <h1 class="text-center text-primary mt-2 mb-4">Register</h1>
+    <div class="container">
+      <form [formGroup]="registrationForm" (submit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="name"
+          />
+          <div
+            *ngIf="
+              registrationForm.get('name')?.invalid &&
+              registrationForm.get('name')?.touched
+            "
+            class="text-danger"
+          >
+            Full Name is required
+          </div>
+        </div>
 
-<div class="loginform">
-  <h1 class="text-center text-primary mt-2 mb-4">Register</h1>
-  <div class="container">
-    <form>
-      <div class="form-group">
-        <label for="password"> Full Name</label>
-        <input type="name" class="form-control" id="name">
-      </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            formControlName="email"
+          />
+          <div
+            *ngIf="
+              registrationForm.get('email')?.invalid &&
+              registrationForm.get('email')?.touched
+            "
+            class="text-danger"
+          >
+            Please enter a valid email address
+          </div>
+        </div>
 
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+        <div class="form-group">
+          <label for="address">Full Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            formControlName="address"
+          />
+          <div
+            *ngIf="
+              registrationForm.get('address')?.invalid &&
+              registrationForm.get('address')?.touched
+            "
+            class="text-danger"
+          >
+            Address is required
+          </div>
+        </div>
 
-      </div>
+        <div class="form-group">
+          <label for="password">Enter Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+          />
+          <div
+            *ngIf="
+              registrationForm.get('password')?.invalid &&
+              registrationForm.get('password')?.touched
+            "
+            class="text-danger"
+          >
+            Password is required
+          </div>
+        </div>
 
-      <div class="form-group">
-        <label for="email">Full Address</label>
-        <input type="address" class="form-control" id="address" >
-      </div>
+        <div class="form-group">
+          <label for="cpassword">Confirm Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="cpassword"
+            formControlName="confirmPassword"
+          />
+          <div
+            *ngIf="
+              registrationForm
+                ?.get('confirmPassword')
+                ?.hasError('passwordsDoNotMatch')
+            "
+          >
+            Passwords do not match
+          </div>
+        </div>
 
-      <div class="form-group">
-        <label for="password">Enter Password</label>
-        <input type="password" class="form-control" id="password" >
-      </div>
-      <div class="form-group">
-        <label for="password">Confirm Password</label>
-        <input type="password" class="form-control" id="cpassword" >
-      </div>
+        <div class="form-group">
+          <label for="number">Mobile Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="number"
+            formControlName="mobileNumber"
+            placeholder="09XX XXX XXXX"
+          />
+          <div
+            *ngIf="
+              registrationForm.get('mobileNumber')?.invalid &&
+              registrationForm.get('mobileNumber')?.touched
+            "
+            class="text-danger"
+          >
+            Mobile Number is required
+          </div>
+        </div>
 
-      <div class="form-group">
-        <label for="number">Mobile Number</label>
-        <input type="text" class="form-control" id="number" placeholder="09XX XXX XXXX" >
-      </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select class="form-control" formControlName="gender">
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <div
+            *ngIf="
+              registrationForm.get('gender')?.invalid &&
+              registrationForm.get('gender')?.touched
+            "
+            class="text-danger"
+          >
+            Please select a gender
+          </div>
+        </div>
 
-      <div class="form-group">
-        <label for="password">Gender</label>
-        <select class="form-control">
-          <option>....</option>
-          <option>Male</option>
-          <option>Female</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="age">Age</label>
-        <input type="age" class="form-control" id="age">
-      </div>
-      <br>
-      <button type="button" class="btn btn-primary" routerLink="/login">Register</button>
-      <button type="button" class="btn btn-danger" routerLink="/login">Back</button>
-    </form>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input
+            type="number"
+            class="form-control"
+            id="age"
+            formControlName="age"
+          />
+          <div
+            *ngIf="
+              registrationForm.get('age')?.invalid &&
+              registrationForm.get('age')?.touched
+            "
+            class="text-danger"
+          >
+            Age is required
+          </div>
+        </div>
+        <br />
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="registrationForm.invalid"
+        >
+          Register
+        </button>
+        <button type="button" class="btn btn-danger" routerLink="/login">
+          Back
+        </button>
+      </form>
+    </div>
   </div>
-  
-</div>
+</body>

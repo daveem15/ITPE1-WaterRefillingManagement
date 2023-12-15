@@ -1,27 +1,32 @@
 <div mat-dialog-title>
-<h1>Order Now!</h1>
+  <h1>Order Now!</h1>
 </div>
-<form [formGroup] = "OrdersForm" (ngSubmit)="submitForm()">
-<mat-form-field>
+<form [formGroup]="OrdersForm" (ngSubmit)="submitForm()">
+  <mat-form-field>
     <mat-label>Type of Water</mat-label>
     <select matNativeControl required formControlName="TypeofWater">
-      <option value="mineral">Mineral</option>
-      <option value="distilled">Distilled</option>
-      <option value="purified">Purified</option>
-      <option value="alkaline">Alkaline</option>
+      <option *ngFor="let product of products" [value]="product.id">
+        {{ product.name }}
+      </option>
     </select>
   </mat-form-field>
 
   <div class="row">
-    <mat-form-field class="example-full-width" >
-        <mat-label>Number of Gallons</mat-label>
-        <input matInput placeholder="1" required formControlName="NumberofGallons">
-      </mat-form-field>
-</div>
-
+    <mat-form-field class="example-full-width">
+      <mat-label>Number of Gallons</mat-label>
+      <input
+        matInput
+        placeholder="1"
+        required
+        formControlName="NumberofGallons"
+      />
+    </mat-form-field>
+  </div>
 
   <div mat-dialog-actions>
     <button mat-raised-button>Cancel</button>
-    <button mat-raised-button color="primary">Order</button>
-</div>
+    <button mat-raised-button color="primary" [disabled]="OrdersForm.invalid">
+      Order
+    </button>
+  </div>
 </form>
